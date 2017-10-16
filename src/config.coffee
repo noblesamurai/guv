@@ -16,7 +16,6 @@ schemas =
 calculateTarget = (config) ->
   # Calculate the point which the process completes
   # the desired percentage of jobs within
-  debug 'calculate target for', config.processing, config.stddev, config.deadline
 
   tolerance = (100-config.percentile)/100
   mean = config.processing
@@ -28,6 +27,7 @@ calculateTarget = (config) ->
   # Shift the point up till hits at the specified deadline
   # XXX: Is it a safe assumption that variance is same for all
   target = config.deadline-distance
+  debug 'calculate target for', config, target
   return target
 
 
