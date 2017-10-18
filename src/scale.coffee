@@ -32,7 +32,7 @@ scale = (config, queueLength) ->
 # returns null on no-op
 # @history: Array of previous values
 scaleWithHistory = (config, name, history, currentWorkers, currentMessages) ->
-debug 'scaleWithHistory()', currentWorkers
+  debug 'scaleWithHistory()', currentWorkers
   ret =
     estimate: null
     next: null
