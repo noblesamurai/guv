@@ -33,9 +33,12 @@ nextState = (cfg, window, queues, queueDetails, currentWorkers) ->
     configKey = locateConfigEntry(cfg, w.app, w.role)
     workersObject[configKey] = w
 
+  debug 'workersObject', workersObject
+
   state = {}
   # TODO: store timestamps?
   for name, role of cfg
+    debug 'role', role
     continue if name == '*'
     state[name] = s = {}
     s.current_jobs = queues[role.queue]
