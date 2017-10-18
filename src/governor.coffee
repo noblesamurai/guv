@@ -22,6 +22,7 @@ locateConfigEntry = (cfg, appName, processName) ->
     return name if (appName == value.app && processName == (value.worker || name))
 
 nextState = (cfg, window, queues, queueDetails, currentWorkers) ->
+  debug 'nextState()', currentWorkers
 
   workersObject = {}
 
